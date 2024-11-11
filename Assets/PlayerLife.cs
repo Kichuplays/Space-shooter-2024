@@ -5,16 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-   
-    public Rigidbody2D rb; 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Trap")) 
-        {
-            Die();
-        }
-    }
 
+    [SerializeField] GameObject Player;
+
+    public Rigidbody2D rb; 
+   
     public int health = 100;
    
     public void Takedamage(int damage)
@@ -28,11 +23,14 @@ public class PlayerLife : MonoBehaviour
 
     private void Die() 
     {
-       
         rb.bodyType = RigidbodyType2D.Static;
     }
     private void RestartLevel() // Starta om scenen när vi dör
     {
-        SceneManager.LoadScene(0);
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(0);
+        }
+        
     }
 }
