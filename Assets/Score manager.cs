@@ -10,7 +10,7 @@ public class Scoremanager : MonoBehaviour
 
     private void Update()
     {
-        score += Time.deltaTime * scoreMultiplier;
+        //score += Time.deltaTime * scoreMultiplier;
         scoreText.text = "Time: " + score.ToString("#.00");
     }
 }

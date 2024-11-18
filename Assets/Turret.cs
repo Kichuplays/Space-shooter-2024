@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    [SerializeField] KeyCode shoot = KeyCode.Mouse0;
     public Transform FirePoint;
     public GameObject bulletPrefab;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(shoot))
         {
             Shoot();
         }
