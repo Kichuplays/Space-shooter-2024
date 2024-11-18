@@ -10,7 +10,7 @@ public class Enemy_bullet : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject,1);
+        Destroy(gameObject,3);
         rb.velocity = transform.right * speed;
     }
     private void OnTriggerEnter2D(Collider2D hitInfo)

@@ -19,9 +19,10 @@ public class Enemy : MonoBehaviour
     
     void Die()
     {
-        Scoremanager score = FindAnyObjectByType<Scoremanager>();
-
-        Destroy(gameObject);
+        Scoremanager.AddPoints(1000);
+       //Scoremanager score = FindAnyObjectByType<Scoremanager>(); 
+       
+       Destroy(gameObject);
     }
     private void Update()
     {

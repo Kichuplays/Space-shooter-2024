@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Firepoint: {fileID: 8463407630852303701}
   BulletPrefab: {fileID: 7273095642547101970, guid: 5c3d5ea98dd507c4e822e4e560aaae9b, type: 3}
-  bps: 1
+  bps: 1.5
 --- !u!61 &8696628568086642559
 BoxCollider2D:
   m_ObjectHideFlags: 0

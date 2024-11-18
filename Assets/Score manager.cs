@@ -1,16 +1,44 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 using TMPro;
 
 public class Scoremanager : MonoBehaviour
 {
-    [SerializeField] private float scoreMultiplier = 1f;
-    [SerializeField] private TMP_Text scoreText;
 
-    public float score;
+    public static int score;
 
-    private void Update()
+    public static int highscore;
+
+    TextMeshProUGUI text;
+
+    void Start()
     {
-        //score += Time.deltaTime * scoreMultiplier;
-        scoreText.text = "Time: " + score.ToString("#.00");
+        text = GetComponent<TextMeshProUGUI>();
+
+        score = 0;
+
+        highscore = PlayerPrefs.GetInt("highscore", highscore);
+    }
+
+    void Update()
+    {
+        if (score > highscore)
+        {
+            highscore = score;
+            text.text = "" + score;
+
+            PlayerPrefs.SetInt("highscore", highscore);
+        }
+    }
+
+    public static void AddPoints(int pointsToAdd)
+    {
+        score += pointsToAdd;
+    }
+
+    public static void Reset()
+    {
+        score = 0;
     }
 }

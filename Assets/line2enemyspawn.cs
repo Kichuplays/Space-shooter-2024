@@ -16,10 +16,10 @@ public class line2enemysspawn : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 2.15f)
+        if (timer > 5.15f)
         {
             Instantiate(enemy, transform.position + new Vector3(Random.Range(-5f, 5f), 0, 0), Quaternion.identity);
-            timer = 5;
+            timer = 1;
         }
 
     }
